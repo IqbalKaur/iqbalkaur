@@ -13,10 +13,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>I am Iqbal Kaur. I majored in M.C.A.(Masters of Computer Application) at Panjab University(Chandigarh, India). This is my highest qualification. My second Highest qualification is B.C.A.(Bachelors of Computer Application.</p>
                 <p>I love creating websites, I'am passionate about it.</p>
-                <p>I belongs to Punjabi family.</p>
+                <p>I belongs to Punjabi family.</p>               
             </div>
         </div>
     </div>
 
-    <hr/>
+    &nbsp;<hr/>
 </asp:Content>
