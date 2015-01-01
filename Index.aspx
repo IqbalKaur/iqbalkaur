@@ -3,29 +3,28 @@
     Blog
 </asp:Content>
 <asp:Content ID="index1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    Sharing what I know.
+    <hr class="small"/>
+    <span class="subheading">
+    Sharing what I know.</span>
 </asp:Content>
 
 <%--Main Content--%>
 <asp:Content ID="index2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> 
                 <% while (reader.Read())
                    {  %>
                         <div class="post-preview">
-                    <a href="post.html">
+                    <a href="post.aspx?id=<%= reader["id"].ToString() %>">
                         <h2 class="post-title">
-                            <% Response.Write(reader["postTitle"].ToString()); %>
+                            <%= reader["postTitle"].ToString() %>
                         </h2>
                         <h3 class="post-subtitle">
-                            <% Response.Write(reader["postSubTitle"].ToString());%>
-                            
+                            <%= reader["postSubTitle"].ToString()%>                            
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#"><% Response.Write(reader["postedBy"].ToString()); %></a> on <% Response.Write(reader["date"].ToString()); %></p>
-
+                    <p class="post-meta">Posted by <a href="#"><%= reader["postedBy"].ToString() %></a> on <%= reader["date"].ToString() %></p>
                 </div>
                 <hr/>
                   <% } %>

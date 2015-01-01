@@ -2,8 +2,11 @@
 <asp:Content ID="aboutMe" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     About Me
 </asp:Content>
+
 <asp:Content ID="aboutMe1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    This is what I am, What I do.
+    <hr class="small"/>
+    <span class="subheading">
+    This is what I am, What I do.</span>
 </asp:Content>
 
 <%--Main Content--%>

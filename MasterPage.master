@@ -54,6 +54,9 @@
                         <a href="portfolio.aspx">Portfolio</a>
                     </li>
                     <li>
+                        <a href="post.aspx">Post</a>
+                    </li>
+                    <li>
                         <a href="contact.aspx">Contact</a>
                     </li>
                 </ul>
@@ -69,22 +72,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
+                    <div class="<%= pageType %>-heading">
                         <h1>
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
                         </h1>
-                        <hr class="small"/>
-                        <span class="subheading"><asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                            </asp:ContentPlaceHolder></span>
+                        
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            </asp:ContentPlaceHolder>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
-             
-
     <hr/>
 <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
     <!-- Footer -->
