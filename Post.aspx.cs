@@ -14,7 +14,8 @@ public partial class Post : System.Web.UI.Page
     protected SqlDataReader reader;
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.pageType = "post";   
+        Master.pageType = "post";
+        Master.bgImg = "post-bg.jpg";
         if (!Page.IsPostBack)
         {
             con.Open();

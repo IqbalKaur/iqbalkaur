@@ -9,6 +9,6 @@ public partial class portfolio : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.bgImg = "portfolio-bg.jpg";
     }
 }

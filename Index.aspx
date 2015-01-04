@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="Index" MasterPageFile="~/MasterPage.master" %>
+<%@ MasterType TypeName="MasterPage" %>
 <asp:Content ID="index" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     Blog
 </asp:Content>

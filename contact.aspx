@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="contact.aspx.cs" Inherits="contact" MasterPageFile="~/MasterPage.master" %>
+<%@ MasterType TypeName="MasterPage" %>
 <asp:Content ID="contact" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     Contact Me
 </asp:Content>

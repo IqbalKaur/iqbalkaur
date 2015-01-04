@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="about.aspx.cs" Inherits="about" MasterPageFile="~/MasterPage.master"%>
+<%@ MasterType TypeName="MasterPage" %>
 <asp:Content ID="aboutMe" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     About Me
 </asp:Content>

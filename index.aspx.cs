@@ -15,6 +15,7 @@ public partial class Index : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         con.ConnectionString = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+        Master.bgImg = "home-bg.jpg";
         if (!Page.IsPostBack)
         {
             con.Open();
