@@ -13,6 +13,7 @@ public partial class MyBlog : System.Web.UI.Page
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.bgImg = "myblog-bg.jpg";
         if (Page.IsPostBack)
         {
             con.Open();
@@ -30,5 +31,15 @@ public partial class MyBlog : System.Web.UI.Page
         cmd.Parameters.Add("@content", SqlDbType.NVarChar).Value = txtcontent.Text;
         cmd.ExecuteNonQuery();
         cmd.Dispose();
+        Clear_Rec();
+    }
+
+    private void Clear_Rec()
+    {
+        txtpostTitle.Text = "";
+        txtpostSubTitle.Text = "";
+        txtpostedBy.Text = "";
+        txtCalender.Text = "";
+        txtcontent.Text = "";
     }
 }
