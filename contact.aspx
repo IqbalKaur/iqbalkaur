@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-
-    <hr/>
+    <hr />
 </asp:Content>
+
     
