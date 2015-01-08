@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -27,14 +28,21 @@ public partial class Login : System.Web.UI.Page
         cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = usertxt.Text;
         cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = passwordtxt.Text;
         SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.HasRows)
+        if (reader.HasRows)
+        {
+            Response.Cookies["I_USER"].Value = usertxt.Text + passwordtxt.Text;
+            Response.Cookies["I_USER"].Expires = DateTime.Now.AddHours(1);
+            while (reader.Read())
             {
-                Response.Write("login successfull");
+                Response.Cookies["I_ID"].Value = reader["id"].ToString();
+                Response.Cookies["I_ID"].Expires = DateTime.Now.AddHours(1);
             }
-            else
-            {
-                errorlbl.Text = "Login Unsuccessfull!";
-            }
+            Response.Redirect("MyBlog.aspx");
+        }
+        else
+        {
+            errorlbl.Text = "Login Unsuccessfull!";
+        }
         cmd.Dispose();
     }
 }

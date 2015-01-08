@@ -9,13 +9,38 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">            
-    <asp:Label id="postlbl" runat="server" Text="Post Title:"/><asp:TextBox ID="txtpostTitle" runat="server"/><br />
-    <asp:Label id="sublbl" runat="server" Text="Post SubTitle:"/><asp:TextBox ID="txtpostSubTitle" runat="server" ></asp:TextBox><br />
-    <asp:Label id="postedbylbl" runat="server" Text="Posted By:"/><asp:TextBox ID="txtpostedBy" runat="server"></asp:TextBox><br />
-    <asp:Label id="datelbl" runat="server" Text="Date:"/><asp:TextBox ID="txtCalender" runat="server" TextMode="DateTime"></asp:TextBox><br />
-    <asp:Label id="contentlbl" runat="server" Text="Content:"/><asp:TextBox ID="txtcontent" runat="server" TextMode="MultiLine"></asp:TextBox><br /><br />
-    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click"/>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">  
+                <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">          
+    <label>Post Title:</label>
+                <asp:TextBox ID="txtpostTitle" runat="server" CssClass="form-control" placeholder="Post Title"/><br />
+                            </div>
+                    </div>
+                <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+    <label>Post SubTitle:</label>
+                <asp:TextBox ID="txtpostSubTitle" runat="server" CssClass="form-control" placeholder="Post SubTitle"/><br />
+                            </div>
+                    </div>
+                <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+    <label>Posted By:</label>
+                <asp:TextBox ID="txtpostedBy" runat="server" CssClass="form-control" placeholder="Posted By"/><br />
+                            </div>
+                    </div>
+                <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+    <label>Date:</label>
+                <asp:TextBox ID="txtCalender" runat="server" TextMode="DateTime" CssClass="form-control" placeholder="Date"/><br />
+                            </div>
+                    </div>
+                <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+    <label>Content:</label>
+                <asp:TextBox ID="txtcontent" runat="server" TextMode="MultiLine" CssClass="form-control" placeholder="Content"/><br /><br />
+                            </div>
+                    </div>
+    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" class="btn btn-default"/>
             </div>
         </div>
      </div>

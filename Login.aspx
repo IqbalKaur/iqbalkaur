@@ -8,12 +8,23 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <asp:Label ID="label1" runat="server" Text="You must be Login to create a new blog post" /><br /><br />
-                <asp:Label ID="userlbl" runat="server" Text="UserName" />
-                <asp:TextBox ID="usertxt" runat="server" ></asp:TextBox><br />
-                <asp:Label ID="passwdlbl" runat="server" Text="Password"/>
-                <asp:TextBox ID="passwordtxt" runat="server" TextMode="Password" ></asp:TextBox><br />
-                <asp:Button ID="btnlogin" runat="server" Text="Login" OnClick="btnlogin_Click"/><br />
+                <p>You must be Login to create a new blog post</p><br /><br />
+
+                <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>UserName</label>
+                <asp:TextBox ID="usertxt" runat="server" CssClass="form-control" placeholder="UserName"></asp:TextBox>
+                            <br />
+                </div>
+                    </div>
+
+                <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Password</label>
+                <asp:TextBox ID="passwordtxt" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password"/><br />
+                </div>
+                    </div>
+                <asp:Button ID="btnlogin" runat="server" Text="Login" class="btn btn-default" OnClick="btnlogin_Click"/><br />
                 <asp:Label ID="errorlbl" runat="server" ForeColor="Red" />
                 </div>
             </div>
