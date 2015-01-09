@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,7 +8,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Net;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -30,12 +30,13 @@ public partial class Login : System.Web.UI.Page
         SqlDataReader reader = cmd.ExecuteReader();
         if (reader.HasRows)
         {
-            Response.Cookies["I_USER"].Value = usertxt.Text + passwordtxt.Text;
-            Response.Cookies["I_USER"].Expires = DateTime.Now.AddHours(1);
+            Auth auth = new Auth();
+            Response.Cookies["ik_secret"].Value = auth.LoginHash(usertxt.Text + passwordtxt.Text);
+            Response.Cookies["ik_secret"].Expires = DateTime.Now.AddHours(1);
             while (reader.Read())
             {
-                Response.Cookies["I_ID"].Value = reader["id"].ToString();
-                Response.Cookies["I_ID"].Expires = DateTime.Now.AddHours(1);
+                Response.Cookies["ik_id"].Value = reader["id"].ToString();
+                Response.Cookies["ik_id"].Expires = DateTime.Now.AddHours(1);
             }
             Response.Redirect("MyBlog.aspx");
         }

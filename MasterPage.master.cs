@@ -15,14 +15,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     public string bgImg = "home-bg.jpg";
     protected string loginPage = "Login.aspx";
     protected string loginStatus = "Login";
-    protected string username;
+    protected string username = "Iqbal Kaur";
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (Request.Cookies["I_USER"] != null)
+    {     
+        if (Request.Cookies["ik_secret"] != null)
         {
-            string name = Request.Cookies["I_USER"].Value;
-            string id = Request.Cookies["I_ID"].Value;
-
+            string secretCookie = Request.Cookies["ik_secret"].Value;
+            string id = Request.Cookies["ik_id"].Value;
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -31,7 +30,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                if (name == (reader["UserName"].ToString() + reader["Password"].ToString()))
+                Auth auth = new Auth();
+                if (secretCookie == auth.LoginHash(reader["UserName"].ToString() + reader["Password"].ToString()))
                 {
                     loginPage = "Logout.aspx";
                     loginStatus = "Logout";

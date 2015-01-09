@@ -9,10 +9,10 @@ public partial class Logout : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.Cookies["I_USER"] != null)
+        if (Request.Cookies["ik_secret"] != null)
         {
-            Response.Cookies["I_USER"].Expires = DateTime.Now.AddHours(-1);
-            Response.Cookies["I_ID"].Expires = DateTime.Now.AddHours(-1);
+            Response.Cookies["ik_secret"].Expires = DateTime.Now.AddHours(-1);
+            Response.Cookies["ik_id"].Expires = DateTime.Now.AddHours(-1);
             Response.Redirect("Index.aspx");
         }
     }
