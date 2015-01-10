@@ -10,23 +10,29 @@ using System.Configuration;
 
 public partial class Post : System.Web.UI.Page
 {
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
-    protected SqlDataReader reader;
+    
+    protected Dictionary<string, string> dict = new Dictionary<string, string>();
     protected void Page_Load(object sender, EventArgs e)
-    {
+    {  
         Master.pageType = "post";
         Master.bgImg = "post-bg.jpg";
-        if (!Page.IsPostBack)
-        {
-            con.Open();
-        }
         SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
+        cmd.Connection = Master.con;
         int nid = int.Parse(Request.QueryString["id"].ToString());
         cmd.CommandText = "SELECT * FROM BlogTB WHERE id = @nid";
         cmd.Parameters.AddWithValue("@nid", nid);
-        this.reader = cmd.ExecuteReader();
-        reader.Read();
+        SqlDataReader reader;
+        reader = cmd.ExecuteReader();
+        
+        while (reader.Read())
+        {
+            dict.Add("postTitle", reader["postTitle"].ToString());
+            dict.Add("postSubTitle", reader["postSubTitle"].ToString());
+            dict.Add("userId", reader["userId"].ToString());
+            dict.Add("createdAt", reader["createdAt"].ToString());
+            dict.Add("content", reader["content"].ToString());
+        }
+        reader.Close();
         this.DataBind();
     }
 } 

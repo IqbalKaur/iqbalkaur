@@ -10,26 +10,20 @@ using System.Configuration;
 
 public partial class MyBlog : System.Web.UI.Page
 {
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
     protected void Page_Load(object sender, EventArgs e)
     {
         Master.bgImg = "myblog-bg.jpg";
-        txtDate.Text = DateTime.Now.ToShortDateString();
-        if (Page.IsPostBack)
-        {
-            con.Open();
-        }
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
         
         SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
-        cmd.CommandText = "INSERT into BlogTB(postTitle, postSubTitle, postedBy, date, content) VALUES(@postTitle, @postSubTitle, @postedBy, @date, @content)";
+        cmd.Connection = Master.con;
+        cmd.CommandText = "INSERT into BlogTB(postTitle, postSubTitle, userId, createdAt, content) VALUES(@postTitle, @postSubTitle, @userId, @createdAt, @content)";
         cmd.Parameters.Add("@postTitle", SqlDbType.NVarChar).Value = txtpostTitle.Text;
         cmd.Parameters.Add("@postSubTitle", SqlDbType.NVarChar).Value = txtpostSubTitle.Text;
-        cmd.Parameters.Add("@postedBy", SqlDbType.VarChar).Value = txtpostedBy.Text;
-        cmd.Parameters.Add("@date", SqlDbType.VarChar).Value = txtDate.Text; 
+        cmd.Parameters.Add("@userId", SqlDbType.VarChar).Value = Master.auth.userId;
+        cmd.Parameters.Add("@createdAt", SqlDbType.VarChar).Value = DateTime.Now.ToString();
         cmd.Parameters.Add("@content", SqlDbType.NVarChar).Value = txtcontent.Text;
         cmd.ExecuteNonQuery(); 
         cmd.Dispose();
@@ -40,8 +34,6 @@ public partial class MyBlog : System.Web.UI.Page
     {
         txtpostTitle.Text = "";
         txtpostSubTitle.Text = "";
-        txtpostedBy.Text = "";
-        txtDate.Text = "";
         txtcontent.Text = "";
     }
 }

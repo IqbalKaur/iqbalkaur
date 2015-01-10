@@ -1,6 +1,9 @@
-﻿* Move login, logout, cookie code in Auth class.
-* Admin page with GridView.
+﻿* Admin page with GridView.
 	* Delete button.
-* One connectionString in MasterPage.
 * Pagination.
 * Editor for content: http://www.codeproject.com/Tips/712382/TinyMCE-for-ASP-NET
+* Success message on submit Post.
+* Comments
+
+Bugs:
+* change userid to username in posts.

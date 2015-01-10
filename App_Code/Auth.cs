@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 using System.Security.Cryptography;
 using System.Text;
+using System.Data;
+using System.Data.SqlClient;
 
 public class Auth
 {
-    public Auth()
+    public string username;
+    public string userId;
+    SqlConnection con;
+    public Auth(SqlConnection con)
     {
-
+        this.con = con;
     }
 
     public string LoginHash(string str)
@@ -24,4 +30,70 @@ public class Auth
         }
         return strHashPassword;
     }
+
+    public void Logout(HttpRequest Request, HttpResponse Response)
+    {
+        if (Request.Cookies["ik_secret"] != null)
+        {
+            Response.Cookies["ik_secret"].Expires = DateTime.Now.AddHours(-1);
+            Response.Cookies["ik_id"].Expires = DateTime.Now.AddHours(-1);
+            Response.Redirect("Index.aspx");
+        }
+    }
+
+    public bool Login(string usertxt, string passwordtxt, HttpResponse Response)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = this.con;
+        cmd.CommandText = "SELECT * FROM Login WHERE UserName=@username and Password=@password";
+        cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = usertxt;
+        cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = passwordtxt;
+        SqlDataReader reader = cmd.ExecuteReader();
+        if (reader.HasRows)
+        {
+            Response.Cookies["ik_secret"].Value = this.LoginHash(usertxt + passwordtxt);
+            Response.Cookies["ik_secret"].Expires = DateTime.Now.AddHours(1);
+            while (reader.Read())
+            {
+                Response.Cookies["ik_id"].Value = reader["id"].ToString();
+                Response.Cookies["ik_id"].Expires = DateTime.Now.AddHours(1);
+            }
+            cmd.Dispose();
+            return true;
+        }
+        else
+        {
+            cmd.Dispose();
+            return false;
+        }
+    }
+
+    public bool CheckLoginInfo(HttpRequest Request)
+    {
+        if (Request.Cookies["ik_secret"] != null)
+        {
+            string secretCookie = Request.Cookies["ik_secret"].Value;
+            string id = Request.Cookies["ik_id"].Value;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = this.con;
+            cmd.CommandText = "Select * from Login where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (secretCookie == this.LoginHash(reader["UserName"].ToString() + reader["Password"].ToString()))
+                {
+                    this.username = reader["UserName"].ToString();
+                    this.userId = reader["id"].ToString();
+
+                    reader.Close();
+                    //cmd.Dispose();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
+

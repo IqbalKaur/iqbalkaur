@@ -24,18 +24,6 @@
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Posted By:</label>
-                        <asp:TextBox ID="txtpostedBy" runat="server" CssClass="form-control" placeholder="Posted By"/><br />
-                    </div>
-                </div>
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Date:</label>
-                        <asp:TextBox ID="txtDate" runat="server" CssClass="form-control" placeholder="Date"/><br />
-                    </div>
-                </div>
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label>Content:</label>
                         <asp:TextBox ID="txtcontent" runat="server" TextMode="MultiLine" CssClass="form-control" placeholder="Content"/><br /><br />
                     </div>
