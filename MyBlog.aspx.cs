@@ -28,6 +28,7 @@ public partial class MyBlog : System.Web.UI.Page
         cmd.ExecuteNonQuery(); 
         cmd.Dispose();
         Clear_Rec();
+        successPost.Text = "<div class='alert alert-success'>You post has been submitted!</div>"; 
     }
 
     private void Clear_Rec()

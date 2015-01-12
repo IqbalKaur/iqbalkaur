@@ -25,7 +25,7 @@
                             <%= reader["postSubTitle"].ToString()%>                            
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#"><%= reader["userId"].ToString() %></a> on <%= reader["createdAt"].ToString() %></p>
+                    <p class="post-meta">Posted by <a href="#"><%= reader["username"].ToString() %></a> on <%= reader["createdAt"].ToString() %></p>
                 </div>
                 <hr/>
                   <% } %>

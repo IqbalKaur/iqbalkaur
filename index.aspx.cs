@@ -22,7 +22,10 @@ public partial class Index : System.Web.UI.Page
         }
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = con;
-        cmd.CommandText = "select * from BlogTB";
+        cmd.CommandText = @"SELECT * 
+                            FROM BlogTB 
+                            INNER JOIN Login 
+                                ON BlogTB.userid=Login.id";
         this.reader = cmd.ExecuteReader();
         this.DataBind();
     }

@@ -33,7 +33,7 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -139,6 +139,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
-    </form>
+    
 </body>
 </html>

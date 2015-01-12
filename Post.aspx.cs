@@ -19,7 +19,9 @@ public partial class Post : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
         int nid = int.Parse(Request.QueryString["id"].ToString());
-        cmd.CommandText = "SELECT * FROM BlogTB WHERE id = @nid";
+        cmd.CommandText = @"SELECT * FROM
+                                BlogTB INNER JOIN Login
+                                ON BlogTB.userid=Login.id WHERE BlogTB.id = @nid;";
         cmd.Parameters.AddWithValue("@nid", nid);
         SqlDataReader reader;
         reader = cmd.ExecuteReader();
@@ -28,7 +30,7 @@ public partial class Post : System.Web.UI.Page
         {
             dict.Add("postTitle", reader["postTitle"].ToString());
             dict.Add("postSubTitle", reader["postSubTitle"].ToString());
-            dict.Add("userId", reader["userId"].ToString());
+            dict.Add("username", reader["username"].ToString());
             dict.Add("createdAt", reader["createdAt"].ToString());
             dict.Add("content", reader["content"].ToString());
         }
