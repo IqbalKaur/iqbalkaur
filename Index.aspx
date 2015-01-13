@@ -14,6 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> 
+                <form name="indexForm" id="contactForm" novalidate="novalidate" runat="server">
                 <% while (reader.Read())
                    {  %>
                         <div class="post-preview">
@@ -25,11 +26,14 @@
                             <%= reader["postSubTitle"].ToString()%>                            
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#"><%= reader["username"].ToString() %></a> on <%= reader["createdAt"].ToString() %></p>
+                    <p class="post-meta">Posted by <a href="#"><%= reader["username"].ToString() %></a> on <%= reader["createdAt"].ToString() %><a href="post.aspx?id=<%= reader["id"].ToString() %>">. <%= getCommentsCount(reader["id"].ToString()) %> Comments</a></p>
+                    
                 </div>
+
                 <hr/>
+                    
                   <% } %>
-                
+                </form>
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">

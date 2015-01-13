@@ -17,6 +17,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     public string bgImg = "home-bg.jpg";
     protected string loginPage = "Login.aspx";
     protected string loginStatus = "Login";
+
     
     public MasterPage()
     {

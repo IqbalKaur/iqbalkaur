@@ -20,8 +20,8 @@ public partial class Post : System.Web.UI.Page
         cmd.Connection = Master.con;
         int nid = int.Parse(Request.QueryString["id"].ToString());
         cmd.CommandText = @"SELECT * FROM
-                                BlogTB INNER JOIN Login
-                                ON BlogTB.userid=Login.id WHERE BlogTB.id = @nid;";
+                                Blog INNER JOIN Login
+                                ON Blog.userid=Login.id WHERE Blog.id = @nid";
         cmd.Parameters.AddWithValue("@nid", nid);
         SqlDataReader reader;
         reader = cmd.ExecuteReader();
@@ -36,5 +36,17 @@ public partial class Post : System.Web.UI.Page
         }
         reader.Close();
         this.DataBind();
+    }
+    protected void btnComment_Click(object sender, EventArgs e)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = Master.con;
+        cmd.CommandText = "INSERT INTO Comments(name, email, comment, postId) VALUES(@name, @email, @comment, @postid)";
+        cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = txtName.Text;
+        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = txtEmail.Text;
+        cmd.Parameters.Add("@comment", SqlDbType.NVarChar).Value = txtComment.Text;
+        cmd.Parameters.Add("@postid", SqlDbType.Int).Value = Request.QueryString["id"];
+        cmd.ExecuteNonQuery();
+        cmd.Dispose();
     }
 } 

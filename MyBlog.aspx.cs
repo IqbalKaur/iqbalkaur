@@ -19,7 +19,7 @@ public partial class MyBlog : System.Web.UI.Page
         
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
-        cmd.CommandText = "INSERT into BlogTB(postTitle, postSubTitle, userId, createdAt, content) VALUES(@postTitle, @postSubTitle, @userId, @createdAt, @content)";
+        cmd.CommandText = "INSERT into Blog(postTitle, postSubTitle, userId, createdAt, content) VALUES(@postTitle, @postSubTitle, @userId, @createdAt, @content)";
         cmd.Parameters.Add("@postTitle", SqlDbType.NVarChar).Value = txtpostTitle.Text;
         cmd.Parameters.Add("@postSubTitle", SqlDbType.NVarChar).Value = txtpostSubTitle.Text;
         cmd.Parameters.Add("@userId", SqlDbType.VarChar).Value = Master.auth.userId;

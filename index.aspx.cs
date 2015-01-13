@@ -23,10 +23,26 @@ public partial class Index : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = con;
         cmd.CommandText = @"SELECT * 
-                            FROM BlogTB 
+                            FROM Blog 
                             INNER JOIN Login 
-                                ON BlogTB.userid=Login.id";
+                              ON Blog.userid=Login.id";
         this.reader = cmd.ExecuteReader();
-        this.DataBind();
+    }
+
+    // counting number of comments of postid
+    // return total number of comments
+    protected string getCommentsCount(string id)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = con;
+        int nid = int.Parse(id);
+        cmd.CommandText = @"
+            SELECT count(postid) AS commentsCount 
+            FROM Comments 
+            WHERE postid = @nid";
+        cmd.Parameters.AddWithValue("@nid", nid);
+        string result = Convert.ToString(cmd.ExecuteScalar());
+
+        return result;
     }
 }
