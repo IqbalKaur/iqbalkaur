@@ -9,6 +9,7 @@ public partial class contact : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pageTitle = "Contact Me";
         Master.bgImg = "contact-bg.jpg";      
     }
     

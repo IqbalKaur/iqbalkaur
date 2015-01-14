@@ -248,6 +248,38 @@ hr.small {
     font-size: 36px;
   }
 }
+
+/*Comments on Post Page*/
+.comment {
+  color: #404040;
+}
+.comment:hover,
+.comment:focus {
+  text-decoration: none;
+  color: #0085a1;
+}
+.comment > .comment-content {
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.comment > .comment-meta {
+  color: #808080;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+.comment > .comment-meta > a {
+  text-decoration: none;
+  color: #404040;
+}
+.comment > .comment-meta > a:hover,
+.comment > .comment-meta > a:focus {
+  color: #0085a1;
+  text-decoration: underline;
+}
+
+
 .section-heading {
   font-size: 36px;
   margin-top: 60px;

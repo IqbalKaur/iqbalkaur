@@ -17,31 +17,41 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <%# dict["content"] %>
                     <hr />
+                    <h2>Comments</h2>
+                    <% while (reader.Read()) { %>
+                        <div class="comment">
+                            <h3 class="comment-content">
+                                <%= reader["comment"].ToString() %>
+                            </h3>
+                            <p class="comment-meta">By <%= reader["name"].ToString() %></p>
+                        </div>
+                        <hr/>
+                    <% } %>
                     <p>Please leave your comment here!</p>
                     <form name="postComment" runat="server" novalidate="novalidate">
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">          
-                            <label>Name:</label>
-                            <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Name"/><br />
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">          
+                                <label>Name:</label>
+                                <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Name"/><br />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">          
-                            <label>Email:</label>
-                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email"/><br />
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">          
+                                <label>Email:</label>
+                                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email"/><br />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">          
-                            <label>Comment:</label>
-                            <asp:TextBox ID="txtComment" runat="server" CssClass="form-control" TextMode="MultiLine" placeholder="Your Comments"/><br /><br />
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">          
+                                <label>Comment:</label>
+                                <asp:TextBox ID="txtComment" runat="server" CssClass="form-control" TextMode="MultiLine" placeholder="Your Comments"/><br /><br />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-xs-12">
-                            <asp:Button ID="btnComment" runat="server" Text="Post Comment" class="btn btn-default" OnClick="btnComment_Click"/>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <asp:Button ID="btnComment" runat="server" Text="Post Comment" class="btn btn-default" OnClick="btnComment_Click"/>
+                            </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>

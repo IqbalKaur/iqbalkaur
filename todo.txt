@@ -1,10 +1,9 @@
 ﻿* Admin page with GridView.
 	* Delete button.
 * Pagination.{Older Post}
-* Editor for content: http://www.codeproject.com/Tips/712382/TinyMCE-for-ASP-NET
+* Editor for content: http://www.codeproject.com/Tips/712382/TinyMCE-for-ASP-NET -- not properly.
 * Refactor alert messages.
 * Code Comments.
-* Post Comments Display
-* Page titles.
-
-
+* Password Hash.
+* Create some blog posts.
+	* acess master page variable on content page.

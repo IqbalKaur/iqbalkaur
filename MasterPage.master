@@ -11,13 +11,15 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Clean Blog</title>
-     
+    <title>Iqbal Kaur<% if(pageTitle != null) { %> - <%= pageTitle %><% } %></title>
+    
+    <%= formatContent %>
+      
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-    <link href="css/clean-blog.min.css" rel="stylesheet"/>
+    <link href="css/clean-blog.css" rel="stylesheet"/>
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -63,9 +65,18 @@
                     <li>
                         <a href="contact.aspx">Contact</a>
                     </li>
-                    <li>
-                        <a href="<%= loginPage %>"><%= loginStatus %></a>
-                    </li>
+                    <% if(isLoggedIn == true) { %>
+                        <li>
+                            <a href="createBlogPost.aspx">Create Blog Post</a>
+                        </li>
+                        <li>
+                            <a href="Logout.aspx">Logout</a>
+                        </li>                 
+                    <% } else { %>
+                        <li>
+                            <a href="Login.aspx">Login</a>
+                        </li>
+                    <% } %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -8,11 +8,16 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-public partial class MyBlog : System.Web.UI.Page
+public partial class CreateBlogPost : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.bgImg = "myblog-bg.jpg";
+        Master.pageTitle = "New Blog Post";
+        Master.bgImg = "blogpost-bg.jpg";
+        //reference site http://www.tinymce.com/wiki.php
+        Master.formatContent = @"
+        <script src='//tinymce.cachefly.net/4.0/tinymce.min.js'></script>
+        <script src='/js/tinymceEditor.js'></script>";
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {

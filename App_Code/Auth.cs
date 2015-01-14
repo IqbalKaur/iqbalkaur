@@ -60,7 +60,7 @@ public class Auth
             }
             cmd.Dispose();
             return true;
-        }
+        } 
         else
         {
             cmd.Dispose();
@@ -86,9 +86,7 @@ public class Auth
                 {
                     this.username = reader["UserName"].ToString();
                     this.userId = reader["id"].ToString();
-
                     reader.Close();
-                    //cmd.Dispose();
                     return true;
                 }
             }

@@ -13,12 +13,12 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
     public Auth auth;
+    public string pageTitle;
+    public string formatContent;
     public string pageType = "site";           // Variable to differentiate formatting.
     public string bgImg = "home-bg.jpg";
-    protected string loginPage = "Login.aspx";
-    protected string loginStatus = "Login";
-
-    
+    protected bool isLoggedIn = false;
+  
     public MasterPage()
     {
         con.Open();
@@ -27,11 +27,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        bool loginInfo = auth.CheckLoginInfo(Request);
-        if (loginInfo == true)
-        {
-            loginPage = "Logout.aspx";
-            loginStatus = "Logout";
-        }
+        isLoggedIn = auth.CheckLoginInfo(Request);
     }
 }

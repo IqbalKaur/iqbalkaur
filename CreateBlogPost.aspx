@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MyBlog.aspx.cs" Inherits="MyBlog" MasterPageFile="~/MasterPage.master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CreateBlogPost.aspx.cs" Inherits="CreateBlogPost" MasterPageFile="~/MasterPage.master"%>
 <%@ MasterType TypeName="MasterPage" %>
 <asp:Content ID="headertxt" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     Welcome Admin
@@ -29,7 +29,7 @@
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Content:</label>
                             <asp:RequiredFieldValidator ID="validateContent" ControlToValidate="txtContent" Text="You cannot submit a post without content." runat="server"/>
-                            <asp:TextBox ID="txtcontent" runat="server" TextMode="MultiLine" CssClass="form-control" placeholder="Content" CausesValidation="true"/><br /><br />
+                            <asp:TextBox ID="txtcontent" runat="server" TextMode="MultiLine" CssClass="mcetiny" placeholder="Content" CausesValidation="true"/><br /><br />
                         </div>
                     </div>
                     <div class="row">
