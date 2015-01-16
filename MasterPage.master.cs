@@ -17,7 +17,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     public string formatContent;
     public string pageType = "site";           // Variable to differentiate formatting.
     public string bgImg = "home-bg.jpg";
-    protected bool isLoggedIn = false;
+    public bool isLoggedIn = false;
   
     public MasterPage()
     {

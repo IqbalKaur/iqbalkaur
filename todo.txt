@@ -7,3 +7,9 @@
 * Password Hash.
 * Create some blog posts.
 	* acess master page variable on content page.
+* GitHub
+* Diploy
+* Set Bg images for post and admin page. 
+
+
+

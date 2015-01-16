@@ -20,12 +20,8 @@ public partial class Index : System.Web.UI.Page
         {
             con.Open();
         }
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
-        cmd.CommandText = @"SELECT * 
-                            FROM Blog 
-                            INNER JOIN Login 
-                              ON Blog.userid=Login.id";
+        SqlCommand cmd = new SqlCommand("blogIndex", con);
+        cmd.CommandType = CommandType.StoredProcedure;
         this.reader = cmd.ExecuteReader();
     }
 

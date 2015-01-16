@@ -1,10 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CreateBlogPost.aspx.cs" Inherits="CreateBlogPost" MasterPageFile="~/MasterPage.master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CreateBlogPost.aspx.cs" Inherits="CreateBlogPost" MasterPageFile="~/MasterPage.master" ValidateRequest="false"%>
 <%@ MasterType TypeName="MasterPage" %>
 <asp:Content ID="headertxt" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     Welcome Admin
 </asp:Content>
 <asp:Content ID="headerxt2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <hr class="small"/>
+    <span class="subheading">
     Add a new blog post from here!
+        </span>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <div class="container">

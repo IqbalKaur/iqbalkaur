@@ -67,7 +67,10 @@
                     </li>
                     <% if(isLoggedIn == true) { %>
                         <li>
-                            <a href="createBlogPost.aspx">Create Blog Post</a>
+                            <a href="CreateBlogPost.aspx">Create Blog Post</a>
+                        </li>
+                        <li>
+                            <a href="Admin.aspx">Admin</a>
                         </li>
                         <li>
                             <a href="Logout.aspx">Logout</a>
