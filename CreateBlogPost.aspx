@@ -37,7 +37,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" class="btn btn-default"/>
+                            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" class="btn btn-default" OnClientClick="tinyMCE.triggerSave(true,false)"/>
                         </div>
                     </div>
                     <asp:Literal ID="successPost" runat="server" />

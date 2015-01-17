@@ -1,15 +1,12 @@
-﻿* Admin page with GridView.
-	* Delete button.
-* Pagination.{Older Post}
-* Editor for content: http://www.codeproject.com/Tips/712382/TinyMCE-for-ASP-NET -- not properly.
+﻿* Edit using tinyMCE--linked from admin page.
+* Pagination.{Older Post}--not yet
 * Refactor alert messages.
 * Code Comments.
 * Password Hash.
-* Create some blog posts.
-	* acess master page variable on content page.
 * GitHub
-* Diploy
-* Set Bg images for post and admin page. 
+* Deploy
+
+
 
 
 

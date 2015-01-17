@@ -19,9 +19,9 @@ public partial class CreateBlogPost : System.Web.UI.Page
         <script src='//tinymce.cachefly.net/4.0/tinymce.min.js'></script>
         <script src='/js/tinymceEditor.js'></script>";
     }
+
     protected void btnSubmit_Click(object sender, EventArgs e)
-    {
-        
+    {     
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
         cmd.CommandText = "INSERT into Blog(postTitle, postSubTitle, userId, createdAt, content) VALUES(@postTitle, @postSubTitle, @userId, @createdAt, @content)";

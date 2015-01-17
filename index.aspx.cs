@@ -10,17 +10,11 @@ using System.Configuration;
 
 public partial class Index : System.Web.UI.Page
 {
-    SqlConnection con = new SqlConnection();
     protected SqlDataReader reader;
     protected void Page_Load(object sender, EventArgs e)
     {
-        con.ConnectionString = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         Master.bgImg = "home-bg.jpg";
-        if (!Page.IsPostBack)
-        {
-            con.Open();
-        }
-        SqlCommand cmd = new SqlCommand("blogIndex", con);
+        SqlCommand cmd = new SqlCommand("blogIndex", Master.con);
         cmd.CommandType = CommandType.StoredProcedure;
         this.reader = cmd.ExecuteReader();
     }
@@ -30,7 +24,7 @@ public partial class Index : System.Web.UI.Page
     protected string getCommentsCount(string id)
     {
         SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
+        cmd.Connection = Master.con;
         int nid = int.Parse(id);
         cmd.CommandText = @"
             SELECT count(postid) AS commentsCount 

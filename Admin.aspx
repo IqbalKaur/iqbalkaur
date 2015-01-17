@@ -14,9 +14,9 @@
 <asp:Content ID="manage3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 
     <form id="form1" runat="server">
-        <asp:GridView ID="postGrid" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="false" DataKeyNames="id">
-            <RowStyle BackColor="#66ccff" ForeColor="Black" />
-            <HeaderStyle BackColor="#000099" ForeColor="#ffffff" Font-Bold="true" />
+        <asp:GridView ID="postGrid" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="false" DataKeyNames="id" CellSpacing="5" CellPadding="10">
+            <RowStyle BackColor="#eaffd5" ForeColor="Black"/>
+            <HeaderStyle BackColor="#000000" ForeColor="White" Font-Bold="true" />
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="ID" ReadOnly="true" />
                 <asp:BoundField DataField="postTitle" HeaderText=" Post Title" />

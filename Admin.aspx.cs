@@ -9,6 +9,6 @@ public partial class Admin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.bgImg = "post-sample-image.jpg";
+        Master.bgImg = "admin-bg.jpg";
     }
 }

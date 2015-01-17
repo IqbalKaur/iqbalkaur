@@ -21,8 +21,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
   
     public MasterPage()
     {
-        con.Open();
-        auth = new Auth(con);
+            con.Open();
+            auth = new Auth(con);   
     }
     
     protected void Page_Load(object sender, EventArgs e)
