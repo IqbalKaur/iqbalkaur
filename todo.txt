@@ -1,12 +1,11 @@
 ﻿* Edit using tinyMCE--linked from admin page.
-* Pagination.{Older Post}--not yet
 * Refactor alert messages.
 * Code Comments.
-* Password Hash.
 * GitHub
 * Deploy
-
-
+* TinyMCE image upload.
+	 -image upload page
+* Previous button on index page.
 
 
 

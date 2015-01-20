@@ -19,7 +19,7 @@ public partial class Login : System.Web.UI.Page
         bool loginStatus = Master.auth.Login(usertxt.Text, passwordtxt.Text, Response);
         if (loginStatus == true)
         {
-            Response.Redirect("CreateBlogPost.aspx");
+            Response.Redirect("Index.aspx");
         }
         else
         {

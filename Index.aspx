@@ -31,11 +31,13 @@
                     <% } %>
                 </form>
                 <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
+                <% if(needsOlderPostLink == true) { %>
+                    <ul class="pager">
+                        <li class="next">                       
+                            <a href="Index.aspx?PageNumber=<%= PageNumber+1 %>">Older Posts &rarr;</a>
+                        </li>
+                    </ul>
+                <% } %> 
             </div>
         </div>
     </div>

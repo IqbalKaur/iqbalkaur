@@ -10,24 +10,22 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>You must be Login to create a new blog post</p><br /><br />
                 <form name="LoginMessage" novalidate="novalidate" runat="server">
-                <div class="row control-group">
+                    <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>UserName</label>
-                <asp:TextBox ID="usertxt" runat="server" CssClass="form-control" placeholder="UserName"></asp:TextBox>
-                            <br />
-                </div>
+                            <label>UserName</label>
+                            <asp:TextBox ID="usertxt" runat="server" CssClass="form-control" placeholder="UserName"></asp:TextBox><br />
+                        </div>
                     </div>
-
-                <div class="row control-group">
+                    <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Password</label>
-                <asp:TextBox ID="passwordtxt" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password"/><br />
-                </div>
+                            <label>Password</label>
+                            <asp:TextBox ID="passwordtxt" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password"/><br />
+                        </div>
                     </div>
-                <asp:Button ID="btnlogin" runat="server" Text="Login" class="btn btn-default" OnClick="btnlogin_Click"/><br />
-                <asp:Label ID="errorlbl" runat="server" ForeColor="Red" />
-                    </form>
-                </div>
+                    <asp:Button ID="btnlogin" runat="server" Text="Login" class="btn btn-default" OnClick="btnlogin_Click"/><br />
+                    <asp:Label ID="errorlbl" runat="server" ForeColor="Red" />
+                </form>
             </div>
         </div>
+    </div>
 </asp:Content>

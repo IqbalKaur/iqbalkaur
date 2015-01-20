@@ -43,6 +43,7 @@ public class Auth
 
     public bool Login(string usertxt, string passwordtxt, HttpResponse Response)
     {
+        passwordtxt = this.LoginHash(passwordtxt);
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = this.con;
         cmd.CommandText = "SELECT * FROM Login WHERE UserName=@username and Password=@password";
@@ -76,7 +77,7 @@ public class Auth
             string id = Request.Cookies["ik_id"].Value;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = this.con;
-            cmd.CommandText = "Select * from Login where id = @id";
+            cmd.CommandText = "Select * from Login where id = @id"; 
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = cmd.ExecuteReader();
 
