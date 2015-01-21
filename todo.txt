@@ -1,11 +1,10 @@
-﻿* Edit using tinyMCE--linked from admin page.
+﻿* Edit using tinyMCE--linked from admin page.--dont know what is the panga..uffff
 * Refactor alert messages.
 * Code Comments.
-* GitHub
 * Deploy
 * TinyMCE image upload.
 	 -image upload page
-* Previous button on index page.
+* Fix ReadMe.--not fully fixed yet.
 
 
 

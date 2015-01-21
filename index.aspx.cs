@@ -13,6 +13,7 @@ public partial class Index : System.Web.UI.Page
     protected SqlDataReader reader;
     public int PageNumber = 0;
     public bool needsOlderPostLink;
+    public bool needsPreviousLink;
     protected void Page_Load(object sender, EventArgs e)
     {
         Master.bgImg = "home-bg.jpg";
@@ -37,7 +38,26 @@ public partial class Index : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@PageNumber", PageNumber);
         cmd.Parameters.AddWithValue("@RowspPage", 5);
         this.reader = cmd.ExecuteReader();
-        
+
+        getOlderPostLink(pagesCount);
+        getPreviousLink();
+
+    }
+
+    private void getPreviousLink()
+    {
+        if (PageNumber == 1)
+        {
+            needsPreviousLink = false;
+        }
+        else
+        {
+            needsPreviousLink = true;
+        }
+    }
+
+    private void getOlderPostLink(int pagesCount)
+    {
         if (pagesCount == PageNumber)
         {
             needsOlderPostLink = false;
@@ -46,7 +66,6 @@ public partial class Index : System.Web.UI.Page
         {
             needsOlderPostLink = true;
         }
-
     }
 
     private static int getPageCount(int postsCount)

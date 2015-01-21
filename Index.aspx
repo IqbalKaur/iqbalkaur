@@ -37,7 +37,14 @@
                             <a href="Index.aspx?PageNumber=<%= PageNumber+1 %>">Older Posts &rarr;</a>
                         </li>
                     </ul>
-                <% } %> 
+                <% } %>
+                <% if(needsPreviousLink == true) { %>
+                    <ul class="pager">
+                        <li class="previous">                       
+                            <a href="Index.aspx?PageNumber=<%= PageNumber-1 %>">Previous Posts &rarr;</a>
+                        </li>
+                    </ul>
+                <% } %>  
             </div>
         </div>
     </div>
