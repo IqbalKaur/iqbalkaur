@@ -23,11 +23,11 @@
                 <asp:BoundField DataField="postSubTitle" HeaderText="Sub Title" />
                 <asp:BoundField DataField="createdAt" HeaderText="Date" />
                 <asp:BoundField DataField="content" HeaderText="Content" />
-                <asp:CommandField ShowEditButton="true" />
                 <asp:CommandField ShowDeleteButton="true" />
-            </Columns>
+                <asp:HyperLinkField DataNavigateUrlFields="id" HeaderText="Edit" ItemStyle-Width="80" DataNavigateUrlFormatString="EditPost.aspx?id={0}" Text="Select" ItemStyle-HorizontalAlign="Center"/>
+            </Columns>            
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IksBlogDBConnectionString %>" SelectCommand="SELECT id, postTitle, postSubTitle, createdAt, content from Blog" UpdateCommand="update Blog set postTitle=@postTitle, postSubTitle=@postSubTitle, createdAt=@createdAt, content=@content where id=@id" DeleteCommand="delete from Blog where id=@id"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cn %>" SelectCommand="SELECT id, postTitle, postSubTitle, createdAt, content from Blog" DeleteCommand="delete from Blog where id=@id"></asp:SqlDataSource>
     </form>
 
 </asp:Content>

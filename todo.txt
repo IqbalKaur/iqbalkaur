@@ -1,7 +1,4 @@
-﻿* Edit using tinyMCE--linked from admin page.--dont know what is the panga..uffff
-* Refactor alert messages.
-* Code Comments.
-* Deploy
+﻿* Code Comments.
 * TinyMCE image upload.
 	 -image upload page
 * Fix ReadMe.--not fully fixed yet.
