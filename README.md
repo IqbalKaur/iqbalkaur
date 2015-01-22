@@ -1,4 +1,4 @@
-# [Iqbal Kaur](http://http://iqbalkaur.azurewebsites.net/) - [Blog](http://iqbalkaur.azurewebsites.net/index.aspx/)
+# [Iqbal Kaur](http://http://iqbalkaur.azurewebsites.net) - [Blog](http://iqbalkaur.azurewebsites.net/index.aspx)
 
 [My Blog](http://iqbalkaur.azurewebsites.com/index.aspx/) is a stylish, personal blog created by me.
 
