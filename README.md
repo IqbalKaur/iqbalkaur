@@ -1,25 +1,28 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/)
+# [Iqbal Kaur](http://iqbalkaur.azurewebsites.com/) - [Blog](http://iqbalkaur.azurewebsites.com/index.aspx/)
 
-[Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
+[My Blog](http://iqbalkaur.azurewebsites.com/index.aspx/) is a stylish, personal blog created by me.
 
 ## Getting Started
 
-To use this theme, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
-* Fork this repository on GitHub
+* Home or Index page showning Blog Posts, Clicking on any post will take you to another page.
+* About Page, obviously something about me which is not known to you.
+* Portfolio, will show my work, I am working on it.
+* Contact me, yeah if you have any queries just fill the form.
+* Login Page, something for me only. When I'll be able to logged in, new pages will open for me.
+	--Admin page:where I can manage my posts, update or can delete.
+	--CreateBlogPost: Where I can create new Blog Posts.
+	--Register: Yeah here I can register for new users, I can create new users.
 
 ## Bugs and Issues
 
-Have a bug or an issue with this theme? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-clean-blog/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/clean-blog/).
+Have a bug or an issue? [Open a new issue](https://https://github.com/IqbalKaur/iqbalkaur/issues) here on GitHub.
 
 ## Creator
 
-Start Bootstrap was created by and is maintained by **David Miller**, Managing Parter at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
+This blog is created by and is maintained by **Iqbal Kaur**.
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+* https://plus.google.com/u/0/+IqbalKaursweet18
+* https://github.com/IqbalKaur
 
 ## Copyright and License
 
