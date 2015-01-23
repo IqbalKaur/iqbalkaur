@@ -172,6 +172,7 @@ hr.small {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
+  text-shadow:2px 2px 2px #000000;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
