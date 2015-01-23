@@ -81,7 +81,13 @@ public class Auth
         }
     }
 
-    //
+    /**
+     * Checks For Login info. If cookie exists
+     * Then executes query to get login info,
+     * Compares cookie info with Login info and sets username and userId
+     * Returns true when hashed data matched with cookie
+     * Else returns false.
+     */
     public bool CheckLoginInfo(HttpRequest Request)
     {
         if (Request.Cookies["ik_secret"] != null)

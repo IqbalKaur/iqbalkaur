@@ -6,7 +6,8 @@
 <asp:Content ID="index1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <hr class="small"/>
     <span class="subheading">
-    Sharing what I know.</span>
+        Sharing what I know.
+    </span>
 </asp:Content>
 
 <%--Main Content--%>

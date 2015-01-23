@@ -1,6 +1,8 @@
-# [Iqbal Kaur](http://iqbalkaur.azurewebsites.net) - [Blog](http://iqbalkaur.azurewebsites.net/index.aspx)
+# [Iqbal Kaur](http://iqbalkaur.azurewebsites.net)
 
-[My Blog](http://iqbalkaur.azurewebsites.com/index.aspx/) is a stylish, personal blog created by me.
+My website uses a stylish, responsive blog theme created by [Start Bootstrap](http://startbootstrap.com/). 
+This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form. Besides these pages I have added some new pages like
+CreateBlog page, Admin Page, Register Page and a Login Page. Really enjoyed wroking with this theme.
 
 ## Getting Started
 
@@ -15,7 +17,7 @@
 
 ## Bugs and Issues
 
-Have a bug or an issue? [Open a new issue](https://https://github.com/IqbalKaur/iqbalkaur/issues) here on GitHub.
+Have a bug or an issue? [Open a new issue](https://github.com/IqbalKaur/iqbalkaur/issues) here on GitHub.
 
 ## Creator
 

@@ -23,6 +23,13 @@ public partial class EditPost : System.Web.UI.Page
         {
             nid = Convert.ToInt32(Request.QueryString["id"]);
         }
+
+        /**
+         * Executes the following block of code only when 
+         * the page is not posted back. If IsPostBack is true 
+         * or no PostBack methed declared here, then update command on btnUpdate_Click event won't work. No information will be updated.
+         * Because the Page_Load method resets the changed values with the old values again.
+         */ 
         if (IsPostBack == false)
         {
             SqlCommand cmd = new SqlCommand();
