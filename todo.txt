@@ -1,4 +1,3 @@
 ﻿* Code Comments.
 * TinyMCE image upload.
 	 -image upload page--oops forgets..how to do that? 
-* Github issues. https://github.com/IqbalKaur/iqbalkaur/issues nai hunda pya:(

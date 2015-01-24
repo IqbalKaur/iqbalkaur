@@ -12,8 +12,6 @@
     <meta name="author" content=""/>
 
     <title>Iqbal Kaur<% if(pageTitle != null) { %> - <%= pageTitle %><% } %></title>
-    
-    <%= formatContent %>
       
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -156,6 +154,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+    
+    
+    <%= formatContent %>
     
 </body>
 </html>

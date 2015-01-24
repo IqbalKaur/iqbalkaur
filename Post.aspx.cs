@@ -13,10 +13,9 @@ public partial class Post : System.Web.UI.Page
     
     protected Dictionary<string, string> dict = new Dictionary<string, string>();
     public SqlDataReader reader;
+
     protected void Page_Load(object sender, EventArgs e)
-    {
-        //Master.pageTitle = "- Post";
-        
+    {  
         Master.pageType = "post";
         Master.bgImg = "post-bg.jpg";
         SqlCommand cmd = new SqlCommand();
