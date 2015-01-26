@@ -140,7 +140,13 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; IksBlog 2014</p>
+                    <p class="copyright text-muted">Copyright &copy; Iqbal Kaur 2014</p>
+
+                    <p class="issue text-muted">                                       
+                        <a href="https://github.com/IqbalKaur/iqbalkaur/issues">
+                            Bugs? File an issue!
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>

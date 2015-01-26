@@ -38,10 +38,17 @@ public partial class Index : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@PageNumber", PageNumber);
         cmd.Parameters.AddWithValue("@RowspPage", 5);
         this.reader = cmd.ExecuteReader();
-
+        
         getOlderPostLink(pagesCount);
         getPreviousLink();
+    }
 
+    protected void convertsUtctimeToESTtime(string createdAt)
+    {
+        DateTime timeUtc = Convert.ToDateTime(createdAt);
+        TimeZoneInfo estZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+        DateTime estTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, estZone);
+        Response.Write(estTime);
     }
 
     private void getPreviousLink()

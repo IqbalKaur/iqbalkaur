@@ -29,7 +29,7 @@ public partial class CreateBlogPost : System.Web.UI.Page
         cmd.Parameters.Add("@postTitle", SqlDbType.NVarChar).Value = txtpostTitle.Text;
         cmd.Parameters.Add("@postSubTitle", SqlDbType.NVarChar).Value = txtpostSubTitle.Text;
         cmd.Parameters.Add("@userId", SqlDbType.Int).Value = Master.auth.userId;
-        cmd.Parameters.Add("@createdAt", SqlDbType.VarChar).Value = DateTime.Now.ToString();
+        cmd.Parameters.Add("@createdAt", SqlDbType.VarChar).Value = DateTime.UtcNow.ToString();
         cmd.Parameters.Add("@content", SqlDbType.NVarChar).Value = txtcontent.Text;
         cmd.ExecuteNonQuery(); 
         cmd.Dispose();

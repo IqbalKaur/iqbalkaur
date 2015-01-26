@@ -17,7 +17,8 @@ public partial class EditPost : System.Web.UI.Page
         Master.bgImg = "blogpost-bg.jpg";
         //reference site http://www.tinymce.com/wiki.php
         Master.formatContent = @"
-        <script src='//tinymce.cachefly.net/4.0/tinymce.min.js'></script>
+        <script type='text/javascript' src='/js/tinymce/tinymce.min.js'></script>
+        <script type='text/javascript' src='/js/tinymce/jquery.tinymce.min.js'></script>
         <script src='/js/tinymceEditor.js'></script>";
         if (Request.QueryString["id"] != null)
         {
