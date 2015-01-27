@@ -43,13 +43,7 @@ public partial class Index : System.Web.UI.Page
         getPreviousLink();
     }
 
-    protected void convertsUtctimeToESTtime(string createdAt)
-    {
-        DateTime timeUtc = Convert.ToDateTime(createdAt);
-        TimeZoneInfo estZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-        DateTime estTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, estZone);
-        Response.Write(estTime);
-    }
+    
 
     private void getPreviousLink()
     {

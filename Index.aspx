@@ -26,7 +26,7 @@
                                     <%= reader["postSubTitle"].ToString()%>                            
                                 </h3>
                             </a>
-                            <p class="post-meta">Posted by <a href="#"><%= reader["username"].ToString() %></a> on <% convertsUtctimeToESTtime(reader["createdAt"].ToString()); %><a href="post.aspx?id=<%= reader["id"].ToString() %>">. <%= getCommentsCount(reader["id"].ToString()) %> Comments</a></p>                 
+                            <p class="post-meta">Posted by <a href="#"><%= reader["username"].ToString() %></a> on <% Master.help.convertsUtctimeToESTtime(reader["createdAt"].ToString()); %><a href="post.aspx?id=<%= reader["id"].ToString() %>">. <%= getCommentsCount(reader["id"].ToString()) %> Comments</a></p>                 
                         </div>
                         <hr/>
                     <% } %>

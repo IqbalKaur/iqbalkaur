@@ -13,6 +13,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
     public Auth auth;
+    public Helpers help;
     public string pageTitle;
     public string formatContent;
     public string pageType = "site";           // Variable to differentiate formatting.
@@ -22,11 +23,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     public MasterPage()
     {
             con.Open();
-            auth = new Auth(con);   
+            auth = new Auth(con);
+            help = new Helpers();
     }
     
     protected void Page_Load(object sender, EventArgs e)
     {
         isLoggedIn = auth.CheckLoginInfo(Request);
     }
+     
 }
