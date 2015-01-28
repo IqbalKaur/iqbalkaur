@@ -9,7 +9,11 @@ public class Helpers
 	{
 		
 	}
-
+    /**
+     * Converts UTC time to Eastern Time
+     * Takes UTC time as parameter from Blog table.
+     * And converts UTC time to EST Time by using ConvertTimeFromUtc method.
+     */ 
     public void convertsUtctimeToESTtime(string createdAt)
     {
         DateTime timeUtc = Convert.ToDateTime(createdAt);

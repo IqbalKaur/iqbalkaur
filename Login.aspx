@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>You must be Login to create a new blog post</p><br /><br />
+                <p>You must be logged in to create a new blog post.</p>
                 <form name="LoginMessage" novalidate="novalidate" runat="server">
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">

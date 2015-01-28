@@ -15,7 +15,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     public Auth auth;
     public Helpers help;
     public string pageTitle;
-    public string formatContent;
+    public string formatContent;                // For TinyMCE .js file.
     public string pageType = "site";           // Variable to differentiate formatting.
     public string bgImg = "home-bg.jpg";
     public bool isLoggedIn = false;

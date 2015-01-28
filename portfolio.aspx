@@ -6,5 +6,6 @@
 <asp:Content ID="portfolio1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <hr class="small"/>
     <span class="subheading">
-    Have a look at my work.</span>
+        Have a look at my work.
+    </span>
 </asp:Content>

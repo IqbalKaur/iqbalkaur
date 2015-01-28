@@ -7,8 +7,8 @@
 <asp:Content ID="manage2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <hr class="small"/>
     <span class="subheading">
-    Here you can manage your blog posts
-        </span>
+        Here you can manage your blog posts
+    </span>
 </asp:Content>
 
 <asp:Content ID="manage3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">

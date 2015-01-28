@@ -89,7 +89,8 @@ public partial class Index : System.Web.UI.Page
     {
         SqlCommand cmd= new SqlCommand();
         cmd.Connection=Master.con;
-        cmd.CommandText = "Select count(id) AS postsCount from Blog";
+        cmd.CommandText = @"SELECT COUNT(id) AS postsCount
+                            FROM Blog";
         int postsCount = int.Parse(Convert.ToString(cmd.ExecuteScalar()));
         return postsCount;
     }
@@ -101,10 +102,9 @@ public partial class Index : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
         int nid = int.Parse(id);
-        cmd.CommandText = @"
-            SELECT count(postid) AS commentsCount 
-            FROM Comments 
-            WHERE postid = @nid";
+        cmd.CommandText = @"SELECT COUNT(postid) AS commentsCount 
+                            FROM Comments 
+                            WHERE postid = @nid";
         cmd.Parameters.AddWithValue("@nid", nid);
         string result = Convert.ToString(cmd.ExecuteScalar());
 

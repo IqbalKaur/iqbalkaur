@@ -56,7 +56,10 @@ public class Auth
         // Query
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = this.con;
-        cmd.CommandText = "SELECT * FROM Login WHERE UserName=@username and Password=@password";
+        cmd.CommandText = @"SELECT *
+                            FROM Login 
+                            WHERE UserName=@username 
+                                AND Password=@password";
         cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = usertxt;
         cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = passwordtxt;
 
@@ -96,7 +99,9 @@ public class Auth
             string id = Request.Cookies["ik_id"].Value;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = this.con;
-            cmd.CommandText = "Select * from Login where id = @id"; 
+            cmd.CommandText = @"SELECT * 
+                                FROM Login 
+                                WHERE id = @id"; 
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = cmd.ExecuteReader();
 

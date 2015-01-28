@@ -5,8 +5,11 @@
 </asp:content>
 <asp:Content ID="content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
     <h2 class="subheading"> 
-    <%# dict["postSubTitle"] %></h2>
-    <span class="meta">Posted by <a href="#"><%# dict["username"] %></a> on <% Master.help.convertsUtctimeToESTtime(dict["createdAt"]); %></span>  
+        <%# dict["postSubTitle"] %>
+    </h2>
+    <span class="meta">
+        Posted by <a href="#"><%# dict["username"] %></a> on <% Master.help.convertsUtctimeToESTtime(dict["createdAt"]); %>
+    </span>  
 </asp:Content>
 
 <%--Main Content--%>

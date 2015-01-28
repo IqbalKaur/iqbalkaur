@@ -71,6 +71,7 @@ hr.small {
   .navbar-custom .navbar-brand {
     color: white;
     padding: 20px;
+    text-shadow: 2px 2px #000000;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
@@ -79,6 +80,7 @@ hr.small {
   .navbar-custom .nav li a {
     color: white;
     padding: 20px;
+    text-shadow: 2px 2px #000000;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
@@ -111,6 +113,7 @@ hr.small {
   }
   .navbar-custom.is-fixed .navbar-brand {
     color: #404040;
+    text-shadow:none;
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
@@ -118,6 +121,7 @@ hr.small {
   }
   .navbar-custom.is-fixed .nav li a {
     color: #404040;
+    text-shadow:none;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {

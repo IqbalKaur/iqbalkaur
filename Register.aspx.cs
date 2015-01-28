@@ -18,7 +18,8 @@ public partial class Register : System.Web.UI.Page
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
-        cmd.CommandText="INSERT into Login(UserName, Password) VALUES(@username, @password)";
+        cmd.CommandText = @"INSERT INTO Login (UserName, Password)
+                            VALUES (@username, @password)";
         cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = txtUserName.Text;
         cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = Master.auth.LoginHash(txtpassword.Text);
         cmd.ExecuteNonQuery();

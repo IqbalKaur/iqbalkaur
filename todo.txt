@@ -1,3 +1,0 @@
-﻿* Code Comments.
-* TinyMCE image upload.
-	 -image upload page--oops forgets..how to do that? 

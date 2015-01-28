@@ -16,16 +16,17 @@ public partial class CreateBlogPost : System.Web.UI.Page
         Master.bgImg = "blogpost-bg.jpg";
         //reference site http://www.tinymce.com/wiki.php
         Master.formatContent = @"
-        <script type='text/javascript' src='/js/tinymce/tinymce.min.js'></script>
-        <script type='text/javascript' src='/js/tinymce/jquery.tinymce.min.js'></script>
-        <script src='/js/tinymceEditor.js'></script>";
+            <script type='text/javascript' src='/js/tinymce/tinymce.min.js'></script>
+            <script type='text/javascript' src='/js/tinymce/jquery.tinymce.min.js'></script>
+            <script src='/js/tinymceEditor.js'></script>";
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
     {     
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
-        cmd.CommandText = "INSERT into Blog(postTitle, postSubTitle, userId, createdAt, content) VALUES(@postTitle, @postSubTitle, @userId, @createdAt, @content)";
+        cmd.CommandText = @"INSERT INTO Blog (postTitle, postSubTitle, userId, createdAt, content) 
+                            VALUES (@postTitle, @postSubTitle, @userId, @createdAt, @content)";
         cmd.Parameters.Add("@postTitle", SqlDbType.NVarChar).Value = txtpostTitle.Text;
         cmd.Parameters.Add("@postSubTitle", SqlDbType.NVarChar).Value = txtpostSubTitle.Text;
         cmd.Parameters.Add("@userId", SqlDbType.Int).Value = Master.auth.userId;

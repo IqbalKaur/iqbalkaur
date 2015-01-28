@@ -6,7 +6,8 @@
 <asp:Content ID="contact2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <hr class="small"/>
     <span class="subheading">
-    Have Questions? I have answers (MayBe).</span>
+        Have Questions? I have answers... maybe.
+    </span>
 </asp:Content>
 <%--Main Content--%>
 <asp:Content ID="contact3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">

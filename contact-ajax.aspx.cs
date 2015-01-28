@@ -14,7 +14,8 @@ public partial class js_contact_ajax : System.Web.UI.Page
     {   
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
-        cmd.CommandText = "INSERT into ContactMe(name, email, phone, message) VALUES(@name, @email, @phone, @message)";
+        cmd.CommandText = @"INSERT INTO ContactMe (name, email, phone, message)
+                            VALUES (@name, @email, @phone, @message)";
         cmd.Parameters.AddWithValue("@name", Request.Form["name"]);
         cmd.Parameters.AddWithValue("@email", Request.Form["email"]);
         cmd.Parameters.AddWithValue("@phone", Request.Form["phone"]);

@@ -17,9 +17,9 @@ public partial class EditPost : System.Web.UI.Page
         Master.bgImg = "blogpost-bg.jpg";
         //reference site http://www.tinymce.com/wiki.php
         Master.formatContent = @"
-        <script type='text/javascript' src='/js/tinymce/tinymce.min.js'></script>
-        <script type='text/javascript' src='/js/tinymce/jquery.tinymce.min.js'></script>
-        <script src='/js/tinymceEditor.js'></script>";
+            <script type='text/javascript' src='/js/tinymce/tinymce.min.js'></script>
+            <script type='text/javascript' src='/js/tinymce/jquery.tinymce.min.js'></script>
+            <script src='/js/tinymceEditor.js'></script>";
         if (Request.QueryString["id"] != null)
         {
             nid = Convert.ToInt32(Request.QueryString["id"]);
@@ -35,8 +35,9 @@ public partial class EditPost : System.Web.UI.Page
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = Master.con;
-            cmd.CommandText = @"SELECT * FROM
-                                        Blog where id = @nid";
+            cmd.CommandText = @"SELECT * 
+                                FROM Blog 
+                                WHERE id = @nid";
             cmd.Parameters.AddWithValue("@nid", nid);
             SqlDataReader reader;
             reader = cmd.ExecuteReader();
@@ -59,7 +60,9 @@ public partial class EditPost : System.Web.UI.Page
         }
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
-        cmd.CommandText = "UPDATE Blog SET postTitle=@postTitle, postSubTitle=@postSubTitle, userId=@userId, createdAt=@createdAt, content=@content where id=@nid";
+        cmd.CommandText = @"UPDATE Blog 
+                            SET postTitle=@postTitle, postSubTitle=@postSubTitle, userId=@userId, createdAt=@createdAt, content=@content 
+                            WHERE id=@nid";
         cmd.Parameters.Add("@nid", SqlDbType.Int).Value = nid;
         cmd.Parameters.Add("@postTitle", SqlDbType.NVarChar).Value = txtpostTitle.Text;
         cmd.Parameters.Add("@postSubTitle", SqlDbType.NVarChar).Value = txtpostSubTitle.Text;

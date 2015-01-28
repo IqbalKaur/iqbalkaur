@@ -21,9 +21,11 @@ public partial class Post : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
         int nid = int.Parse(Request.QueryString["id"].ToString());
-        cmd.CommandText = @"SELECT * FROM
-                                Blog INNER JOIN Login
-                                ON Blog.userid=Login.id WHERE Blog.id = @nid";
+        cmd.CommandText = @"SELECT * 
+                            FROM Blog 
+                            INNER JOIN Login
+                                ON Blog.userid=Login.id 
+                            WHERE Blog.id = @nid";
         cmd.Parameters.AddWithValue("@nid", nid);
         reader = cmd.ExecuteReader();
         
@@ -38,7 +40,9 @@ public partial class Post : System.Web.UI.Page
         }
         SqlCommand cmd1 = new SqlCommand();
         cmd1.Connection = Master.con;
-        cmd1.CommandText = "select * from Comments where postId = @nid";
+        cmd1.CommandText = @"SELECT * 
+                            FROM Comments 
+                            WHERE postId = @nid";
         cmd1.Parameters.AddWithValue("@nid", nid);
         this.reader = cmd1.ExecuteReader();
         
@@ -49,7 +53,8 @@ public partial class Post : System.Web.UI.Page
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
-        cmd.CommandText = "INSERT INTO Comments(name, email, comment, postId) VALUES(@name, @email, @comment, @postid)";
+        cmd.CommandText = @"INSERT INTO Comments (name, email, comment, postId) 
+                            VALUES (@name, @email, @comment, @postid)";
         cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = txtName.Text;
         cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = txtEmail.Text;
         cmd.Parameters.Add("@comment", SqlDbType.NVarChar).Value = txtComment.Text;
