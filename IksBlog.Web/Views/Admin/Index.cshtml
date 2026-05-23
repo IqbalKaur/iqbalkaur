@@ -1,0 +1,45 @@
+@model List<BlogPost>
+@{
+    ViewData["Title"] = "Manage Posts";
+}
+
+<h1>Manage Posts</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div>@TempData["Success"]</div>
+}
+
+<p>
+    <a asp-action="Create">Create New Post</a>
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Created At</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var post in Model)
+        {
+            <tr>
+                <td>@post.Id</td>
+                <td>@post.PostTitle</td>
+                <td>@post.PostSubTitle</td>
+                <td>@post.CreatedAt</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@post.Id">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@post.Id" method="post" style="display:inline">
+                        @Html.AntiForgeryToken()
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

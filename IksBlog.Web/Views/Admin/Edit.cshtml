@@ -1,0 +1,31 @@
+@model EditPostViewModel
+@{
+    ViewData["Title"] = "Edit Post";
+}
+
+<h1>Edit Post</h1>
+
+<form asp-action="Edit" asp-route-id="@ViewContext.RouteData.Values["id"]" method="post">
+  @Html.AntiForgeryToken()
+  <div asp-validation-summary="All"></div>
+  <div>
+    <label asp-for="PostTitle"></label>
+    <input asp-for="PostTitle" />
+    <span asp-validation-for="PostTitle"></span>
+  </div>
+  <div>
+    <label asp-for="PostSubTitle"></label>
+    <input asp-for="PostSubTitle" />
+    <span asp-validation-for="PostSubTitle"></span>
+  </div>
+  <div>
+    <label asp-for="Content"></label>
+    <textarea asp-for="Content"></textarea>
+    <span asp-validation-for="Content"></span>
+  </div>
+  <button type="submit">Update</button>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

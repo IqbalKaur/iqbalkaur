@@ -1,0 +1,31 @@
+@model CreatePostViewModel
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+<h1>Create Post</h1>
+
+<form asp-action="Create" method="post">
+  @Html.AntiForgeryToken()
+  <div asp-validation-summary="All"></div>
+  <div>
+    <label asp-for="PostTitle"></label>
+    <input asp-for="PostTitle" />
+    <span asp-validation-for="PostTitle"></span>
+  </div>
+  <div>
+    <label asp-for="PostSubTitle"></label>
+    <input asp-for="PostSubTitle" />
+    <span asp-validation-for="PostSubTitle"></span>
+  </div>
+  <div>
+    <label asp-for="Content"></label>
+    <textarea asp-for="Content"></textarea>
+    <span asp-validation-for="Content"></span>
+  </div>
+  <button type="submit">Create</button>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
