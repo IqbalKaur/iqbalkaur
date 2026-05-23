@@ -8,7 +8,7 @@
         <%# dict["postSubTitle"] %>
     </h2>
     <span class="meta">
-        Posted by <a href="#"><%# dict["username"] %></a> on <% Master.help.convertsUtctimeToESTtime(dict["createdAt"]); %>
+        Posted by <a href="#"><%# dict["username"] %></a> on <%= Master.help.convertsUtctimeToESTtime(dict["createdAt"]); %>
     </span>  
 </asp:Content>
 
