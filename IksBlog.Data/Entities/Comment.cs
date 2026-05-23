@@ -7,4 +7,6 @@ public class Comment
     public string Email { get; set; } = string.Empty;
     public string CommentText { get; set; } = string.Empty;
     public int PostId { get; set; }
+
+    public BlogPost BlogPost { get; set; } = null!;
 }

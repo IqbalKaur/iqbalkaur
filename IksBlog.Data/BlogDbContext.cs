@@ -26,6 +26,14 @@ public class BlogDbContext : DbContext
             entity.Property(e => e.UserId).HasColumnName("userId");
             entity.Property(e => e.CreatedAt).HasColumnName("createdAt");
             entity.Property(e => e.Content).HasColumnName("content");
+
+            entity.HasOne(e => e.Author)
+                .WithMany()
+                .HasForeignKey(e => e.UserId);
+
+            entity.HasMany(e => e.Comments)
+                .WithOne(c => c.BlogPost)
+                .HasForeignKey(c => c.PostId);
         });
 
         modelBuilder.Entity<Comment>(entity =>

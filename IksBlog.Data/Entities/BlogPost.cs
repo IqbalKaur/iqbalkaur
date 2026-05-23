@@ -8,4 +8,7 @@ public class BlogPost
     public int UserId { get; set; }
     public string CreatedAt { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
+
+    public AppUser Author { get; set; } = null!;
+    public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 }
