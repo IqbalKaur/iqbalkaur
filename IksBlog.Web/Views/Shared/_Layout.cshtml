@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IksBlog</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a asp-controller="Blog" asp-action="Index">Home</a>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

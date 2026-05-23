@@ -4,3 +4,31 @@ Thumbs.db
 resources/files/
 resources/thumbs/
 App_Data/PublishProfiles/
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# IDE / tooling
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet / publish
+*.nupkg
+**/packages/*
+!**/packages/build/
+*.pubxml
+PublishProfiles/
+
+# OS / env
+.DS_Store
+*.swp
+
+# Secrets
+appsettings.*.local.json
+secrets.json
