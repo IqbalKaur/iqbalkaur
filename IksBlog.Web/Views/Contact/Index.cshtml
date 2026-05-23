@@ -1,0 +1,40 @@
+@model ContactViewModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact</h1>
+
+@if (ViewBag.Success == true)
+{
+    <div>Your message has been sent successfully.</div>
+}
+
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+    </div>
+    <div>
+        <label asp-for="Message"></label>
+        <textarea asp-for="Message"></textarea>
+        <span asp-validation-for="Message"></span>
+    </div>
+    <button type="submit">Send</button>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
