@@ -30,6 +30,16 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    if (app.Environment.IsDevelopment())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<BlogDbContext>();
+        var auth = scope.ServiceProvider.GetRequiredService<AuthService>();
+        await DataSeeder.SeedAsync(context, auth);
+    }
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
