@@ -46,8 +46,8 @@ public partial class EditPost : System.Web.UI.Page
             {
                 txtpostTitle.Text = reader["postTitle"].ToString();
                 txtpostSubTitle.Text = reader["postSubTitle"].ToString();
-                txtUserId.Text = reader["userId"].ToString();
-                txtcreatedAt.Text = reader["createdAt"].ToString();
+                lblUserId.Text = reader["userId"].ToString();
+                lblCreatedAt.Text = reader["createdAt"].ToString();
                 txtcontent.Text = reader["content"].ToString();
             }
         }      
@@ -62,13 +62,11 @@ public partial class EditPost : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = Master.con;
         cmd.CommandText = @"UPDATE Blog 
-                            SET postTitle=@postTitle, postSubTitle=@postSubTitle, userId=@userId, createdAt=@createdAt, content=@content 
+                            SET postTitle=@postTitle, postSubTitle=@postSubTitle, content=@content 
                             WHERE id=@nid";
         cmd.Parameters.Add("@nid", SqlDbType.Int).Value = nid;
         cmd.Parameters.Add("@postTitle", SqlDbType.NVarChar).Value = txtpostTitle.Text;
         cmd.Parameters.Add("@postSubTitle", SqlDbType.NVarChar).Value = txtpostSubTitle.Text;
-        cmd.Parameters.Add("@userId", SqlDbType.Int).Value = txtUserId.Text;
-        cmd.Parameters.Add("@createdAt", SqlDbType.DateTime).Value = txtcreatedAt.Text;
         cmd.Parameters.Add("@content", SqlDbType.NVarChar).Value = txtcontent.Text;
         cmd.ExecuteNonQuery();
         cmd.Dispose();
@@ -78,10 +76,8 @@ public partial class EditPost : System.Web.UI.Page
 
     private void Clear_Rec()
     {
-        txtUserId.Text = "";
         txtpostTitle.Text = "";
         txtpostSubTitle.Text = "";
-        txtcreatedAt.Text = "";
         txtcontent.Text = "";
     }
 

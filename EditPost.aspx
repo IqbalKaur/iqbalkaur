@@ -17,8 +17,7 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Id:</label>
-                            <asp:RequiredFieldValidator ID="validateID" ControlToValidate="txtUserId" Text="You must enter a User ID." runat="server"/>
-                            <asp:TextBox ID="txtUserId" runat="server" CssClass="form-control" placeholder="User ID" CausesValidation="true"/><br />
+                            <asp:Label ID="lblUserId" runat="server" /><br />
                         </div>
                     </div>
                     <div class="row control-group">
@@ -38,8 +37,7 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Created At:</label>
-                            <asp:RequiredFieldValidator ID="validateCreatedAt" ControlToValidate="txtcreatedAt" Text="You must enter a created At." runat="server"/>
-                            <asp:TextBox ID="txtcreatedAt" runat="server" CssClass="form-control" placeholder="Created At" CausesValidation="true"/><br />
+                            <asp:Label ID="lblCreatedAt" runat="server" /><br />
                         </div>
                     </div>
                     <div class="row control-group">
