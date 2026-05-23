@@ -13,6 +13,7 @@ public partial class Admin : System.Web.UI.Page
     public int id;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!Master.isLoggedIn) { Response.Redirect("Login.aspx"); return; }
         Master.bgImg = "admin-bg.jpg";
         if (Request.QueryString["id"] != null)
         {

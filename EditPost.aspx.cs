@@ -13,6 +13,7 @@ public partial class EditPost : System.Web.UI.Page
     public int nid;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!Master.isLoggedIn) { Response.Redirect("Login.aspx"); return; }
         Master.pageTitle = "New Blog Post";
         Master.bgImg = "blogpost-bg.jpg";
         //reference site http://www.tinymce.com/wiki.php

@@ -12,6 +12,7 @@ public partial class CreateBlogPost : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!Master.isLoggedIn) { Response.Redirect("Login.aspx"); return; }
         Master.pageTitle = "New Blog Post";
         Master.bgImg = "blogpost-bg.jpg";
         //reference site http://www.tinymce.com/wiki.php
