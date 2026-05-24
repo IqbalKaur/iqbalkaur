@@ -20,12 +20,17 @@ public class ContactController : Controller
     [HttpGet]
     public IActionResult Index()
     {
+        ViewBag.HeroImage = "contact-bg.jpg";
+        ViewBag.PageTitle = "Contact Me";
         return View();
     }
 
     [HttpPost]
     public async Task<IActionResult> Index(ContactViewModel model)
     {
+        ViewBag.HeroImage = "contact-bg.jpg";
+        ViewBag.PageTitle = "Contact Me";
+
         if (!ModelState.IsValid)
         {
             return View(model);
@@ -43,7 +48,7 @@ public class ContactController : Controller
             $"Blog contact from {model.Name}",
             $"Name: {model.Name}\nEmail: {model.Email}\nPhone: {model.Phone}\n\n{model.Message}");
 
-        ViewBag.Success = true;
-        return View(new ContactViewModel());
+        TempData["Success"] = "Message sent";
+        return RedirectToAction(nameof(Index));
     }
 }

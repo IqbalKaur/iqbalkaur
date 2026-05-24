@@ -21,9 +21,19 @@ public class BlogController : Controller
         var total = await _blogRepository.GetTotalPostCountAsync();
         var totalPages = (int)Math.Ceiling(total / (double)PageSize);
 
+        var commentCounts = new Dictionary<int, int>();
+        foreach (var post in posts)
+        {
+            commentCounts[post.Id] = await _blogRepository.GetCommentCountForPostAsync(post.Id);
+        }
+
+        ViewBag.HeroImage = "home-bg.jpg";
+        ViewBag.PageTitle = "Blog";
+
         var viewModel = new BlogIndexViewModel
         {
             Posts = posts,
+            CommentCounts = commentCounts,
             CurrentPage = page,
             TotalPages = totalPages
         };
@@ -38,6 +48,10 @@ public class BlogController : Controller
         {
             return NotFound();
         }
+
+        ViewBag.HeroImage = "post-bg.jpg";
+        ViewBag.PageTitle = post.PostTitle;
+        ViewBag.PageHeadingClass = "post";
 
         return View(post);
     }
@@ -65,11 +79,15 @@ public class BlogController : Controller
 
     public IActionResult About()
     {
+        ViewBag.HeroImage = "about-bg.jpg";
+        ViewBag.PageTitle = "About Me";
         return View();
     }
 
     public IActionResult Portfolio()
     {
+        ViewBag.HeroImage = "portfolio-bg.jpg";
+        ViewBag.PageTitle = "Portfolio";
         return View();
     }
 }

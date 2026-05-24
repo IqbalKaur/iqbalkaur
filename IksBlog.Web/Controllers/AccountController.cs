@@ -25,12 +25,17 @@ public class AccountController : Controller
             return RedirectToAction("Index", "Blog");
         }
 
+        ViewBag.HeroImage = "login-bg.jpg";
+        ViewBag.PageTitle = "";
         return View();
     }
 
     [HttpPost]
     public async Task<IActionResult> Login(LoginViewModel model)
     {
+        ViewBag.HeroImage = "login-bg.jpg";
+        ViewBag.PageTitle = "";
+
         if (!ModelState.IsValid)
         {
             return View(model);
@@ -69,6 +74,8 @@ public class AccountController : Controller
     [Authorize]
     public IActionResult Register()
     {
+        ViewBag.HeroImage = "admin-bg.jpg";
+        ViewBag.PageTitle = "New User";
         return View();
     }
 
@@ -76,6 +83,9 @@ public class AccountController : Controller
     [Authorize]
     public async Task<IActionResult> Register(RegisterViewModel model)
     {
+        ViewBag.HeroImage = "admin-bg.jpg";
+        ViewBag.PageTitle = "New User";
+
         if (!ModelState.IsValid)
         {
             return View(model);

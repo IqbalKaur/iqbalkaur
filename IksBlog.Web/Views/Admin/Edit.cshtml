@@ -3,29 +3,53 @@
     ViewData["Title"] = "Edit Post";
 }
 
-<h1>Edit Post</h1>
-
-<form asp-action="Edit" asp-route-id="@ViewContext.RouteData.Values["id"]" method="post">
-  @Html.AntiForgeryToken()
-  <div asp-validation-summary="All"></div>
-  <div>
-    <label asp-for="PostTitle"></label>
-    <input asp-for="PostTitle" />
-    <span asp-validation-for="PostTitle"></span>
-  </div>
-  <div>
-    <label asp-for="PostSubTitle"></label>
-    <input asp-for="PostSubTitle" />
-    <span asp-validation-for="PostSubTitle"></span>
-  </div>
-  <div>
-    <label asp-for="Content"></label>
-    <textarea asp-for="Content"></textarea>
-    <span asp-validation-for="Content"></span>
-  </div>
-  <button type="submit">Update</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <form asp-action="Edit" asp-route-id="@ViewContext.RouteData.Values["id"]" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="row control-group">
+                    <div class="form-group col-12 floating-label-form-group controls">
+                        <label asp-for="PostTitle">Post Title:</label>
+                        <input asp-for="PostTitle" class="form-control" placeholder="Post Title" />
+                        <span asp-validation-for="PostTitle" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-12 floating-label-form-group controls">
+                        <label asp-for="PostSubTitle">Post SubTitle:</label>
+                        <input asp-for="PostSubTitle" class="form-control" placeholder="Post SubTitle" />
+                        <span asp-validation-for="PostSubTitle" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-12 floating-label-form-group controls">
+                        <label asp-for="Content">Content:</label>
+                        <textarea asp-for="Content" id="post-content" class="form-control" rows="10" placeholder="Content"></textarea>
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <button type="submit" class="btn btn-default">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <!-- Get a free API key at tiny.cloud -->
+    <script src="https://cdn.tiny.cloud/1/7yx7m0rdw894uyolrf7xxmicb8hi93xoiwaeou1ibd5z69km/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#post-content',
+            plugins: 'lists link image code',
+            toolbar: 'bold italic | bullist numlist | link image | code'
+        });
+        document.querySelector('form').addEventListener('submit', () => tinymce.triggerSave());
+    </script>
 }

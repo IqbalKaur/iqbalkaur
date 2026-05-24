@@ -1,39 +1,58 @@
 @model ContactViewModel
 @{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Contact Me";
 }
 
-<h1>Contact</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <hr class="small" />
+            <span class="subheading">Have Questions? I have answers... maybe.</span>
 
-@if (ViewBag.Success == true)
-{
-    <div>Your message has been sent successfully.</div>
-}
+            <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
 
-<form asp-action="Index" method="post">
-    <div asp-validation-summary="All"></div>
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
-        <span asp-validation-for="Name"></span>
+            <form asp-action="Index" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="row control-group">
+                    <div class="form-group col-12 floating-label-form-group controls">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-12 floating-label-form-group controls">
+                        <label asp-for="Email">Email Address</label>
+                        <input asp-for="Email" class="form-control" placeholder="Email Address" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-12 floating-label-form-group controls">
+                        <label asp-for="Phone">Phone Number</label>
+                        <input asp-for="Phone" class="form-control" placeholder="Phone Number" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-12 floating-label-form-group controls">
+                        <label asp-for="Message">Message</label>
+                        <textarea asp-for="Message" class="form-control" rows="5" placeholder="Message"></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="form-group col-12">
+                        <button type="submit" class="btn btn-default">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label asp-for="Email"></label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-        <label asp-for="Phone"></label>
-        <input asp-for="Phone" />
-        <span asp-validation-for="Phone"></span>
-    </div>
-    <div>
-        <label asp-for="Message"></label>
-        <textarea asp-for="Message"></textarea>
-        <span asp-validation-for="Message"></span>
-    </div>
-    <button type="submit">Send</button>
-</form>
+</div>
+
+<hr />
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

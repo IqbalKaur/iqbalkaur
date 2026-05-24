@@ -20,6 +20,9 @@ public class AdminController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
+        ViewBag.HeroImage = "admin-bg.jpg";
+        ViewBag.PageTitle = "Manage Blog Posts";
+
         var total = await _blogRepository.GetTotalPostCountAsync();
         var posts = total == 0
             ? new List<BlogPost>()
@@ -40,6 +43,8 @@ public class AdminController : Controller
     [HttpGet]
     public IActionResult Create()
     {
+        ViewBag.HeroImage = "admin-bg.jpg";
+        ViewBag.PageTitle = "New Post";
         return View();
     }
 
@@ -47,6 +52,9 @@ public class AdminController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(CreatePostViewModel model)
     {
+        ViewBag.HeroImage = "admin-bg.jpg";
+        ViewBag.PageTitle = "New Post";
+
         if (!ModelState.IsValid)
         {
             return View(model);
@@ -81,6 +89,9 @@ public class AdminController : Controller
             return NotFound();
         }
 
+        ViewBag.HeroImage = "admin-bg.jpg";
+        ViewBag.PageTitle = "Edit Post";
+
         var model = new EditPostViewModel
         {
             PostTitle = post.PostTitle,
@@ -95,6 +106,9 @@ public class AdminController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, EditPostViewModel model)
     {
+        ViewBag.HeroImage = "admin-bg.jpg";
+        ViewBag.PageTitle = "Edit Post";
+
         if (!ModelState.IsValid)
         {
             return View(model);

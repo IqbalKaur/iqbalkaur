@@ -2,4 +2,48 @@
 @{
     ViewData["Title"] = "Blog";
 }
-<h1>Blog Index</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <hr class="small" />
+            <span class="subheading">Sharing what I know.</span>
+
+            @foreach (var post in Model.Posts)
+            {
+                var commentCount = Model.CommentCounts.GetValueOrDefault(post.Id, 0);
+                <div class="post-preview">
+                    <a asp-action="Post" asp-route-id="@post.Id">
+                        <h2 class="post-title">@post.PostTitle</h2>
+                        <h3 class="post-subtitle">@post.PostSubTitle</h3>
+                    </a>
+                    <p class="post-meta">
+                        Posted by <a href="#">@post.Author.UserName</a>
+                        on @DateDisplayHelper.FormatUtcToEst(post.CreatedAt)
+                        <a asp-action="Post" asp-route-id="@post.Id">. @commentCount Comments</a>
+                    </p>
+                </div>
+                <hr />
+            }
+
+            @if (Model.CurrentPage < Model.TotalPages)
+            {
+                <ul class="pager">
+                    <li class="next">
+                        <a asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            }
+            @if (Model.CurrentPage > 1)
+            {
+                <ul class="pager">
+                    <li class="previous">
+                        <a asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">&larr; Previous Posts</a>
+                    </li>
+                </ul>
+            }
+        </div>
+    </div>
+</div>
+
+<hr />
