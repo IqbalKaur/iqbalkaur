@@ -19,6 +19,7 @@ App_Data/PublishProfiles/
 *.sln.docstates
 
 # NuGet / publish
+publish/
 *.nupkg
 **/packages/*
 !**/packages/build/
