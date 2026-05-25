@@ -4,6 +4,10 @@ My website uses a stylish, responsive blog theme created by [Start Bootstrap](ht
 This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form. Besides these pages I have added some new pages like
 CreateBlog page, Admin Page, Register Page and a Login Page. Really enjoyed wroking with this theme.
 
+## Deploy to Azure
+
+See [DEPLOY.md](DEPLOY.md) for build, zip deploy, SQL connection strings, and migrations.
+
 ## Getting Started
 
 * Home or Index page showning Blog Posts, Clicking on any post will take you to another page.

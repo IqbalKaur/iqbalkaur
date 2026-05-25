@@ -20,6 +20,7 @@ App_Data/PublishProfiles/
 
 # NuGet / publish
 publish/
+publish.zip
 *.nupkg
 **/packages/*
 !**/packages/build/
